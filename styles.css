@@ -189,19 +189,26 @@ a {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    
+
+    position: relative;
+
     .hero-text {
       position: relative;
+      z-index: 2;
+
       flex: 1 1 0px;
       padding-left: 4rem;
       h1 {
         line-height: 6rem;
         margin-left: 2rem;
-        font-size: calc(3rem + 1vw);
         text-transform: uppercase;
         font-family: "Roag";
         font-weight: 800;
         font-style: italic;
+        font-size: 5rem;
+        margin-right: -150px;
+        position: relative;
+        z-index: 3;
       }
       p {
         line-height: 1.2rem;
@@ -239,6 +246,7 @@ a {
     }
     .hero-image {
       position: relative;
+      z-index: 1;
       flex: 1 1 0px;
       height: 35rem;
       background: url("./assets/img/bmw-r80-bobber.jpg") no-repeat center
