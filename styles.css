@@ -1,0 +1,213 @@
+@layer reset, base, navigation, components, footernavigation;
+@layer reset {
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Roag", sans-serif;
+  }
+  html,
+  body {
+    width: 100%;
+    overflow-x: hidden;
+    /* not given by designer, but i assumed self */
+    font-size: 16px;
+  }
+}
+@layer base {
+  :root {
+    --background-color: white;
+    --text-color: black;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --background-color: black;
+      --text-color: white;
+    }
+  }
+}
+@layer base {
+  body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    /* not given by designer the line-height, but i assumed self */
+    line-height: 1.6;
+    background-color: var(--background-color);
+    color: var(--text-color);
+  }
+}
+@layer navigation {
+  header {
+    background-color: white;
+    color: black;
+    padding: 1rem 1rem 0.8rem 1rem;
+    .nav-english {
+      .logo {
+        margin-bottom: 0.5rem;
+      }
+      .nav-links {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        .left-hand-links {
+          display: flex;
+          gap: 1rem;
+        }
+      }
+      .cta-navigation-link {
+        font-weight: bold;
+        color: rgba(247, 77, 101, 0.9) !important;
+      }
+      .cta-link {
+        font-weight: bold;
+        background-color: rgba(247, 77, 101, 0.9);
+      }
+    }
+    .nav-dansk {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      .nav-links {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 1rem;
+      }
+      .bestilling-link {
+        margin-left: 1rem;
+        color: rgba(247, 77, 101, 0.9);
+        font-weight: bold;
+      }
+    }
+  }
+}
+
+@font-face {
+  font-family: "Roag";
+  src: url("./assets/font/Roag-Bold.otf") format("opentype");
+  font-weight: bold;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Roag";
+  src: url("./assets/font/Roag-ExtraBoldItalic.otf") format("opentype");
+  font-weight: 800;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: "Roag";
+  src: url("./assets/font/Roag-Light.otf") format("opentype");
+  font-weight: 300;
+  font-style: normal;
+}
+
+ul {
+  list-style: none;
+}
+a {
+  text-decoration: none;
+  color: inherit;
+}
+.companies {
+  display: flex;
+}
+.english {
+  display: none;
+}
+
+.dansk {
+  /* display: block; */
+}
+
+@media screen and (max-width: 768px) {
+  .english {
+    display: block;
+  }
+  .dansk {
+    display: none;
+  }
+}
+
+@layer components {
+  .english-hero {
+    min-height: 80vh;
+    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.5)),
+      url("./assets/img/bmw-r80-bobber.jpg") no-repeat center center/cover;
+    background-size: 250%;
+    color: white;
+    width: 100%;
+
+    .english-hero-text {
+      position: relative;
+      padding-top: 4rem;
+      margin: 0 2rem;
+      h1 {
+        font-size: calc(2rem + 1vw);
+        text-transform: uppercase;
+        font-family: "Roag";
+        font-weight: 800;
+        font-style: italic;
+
+        margin-bottom: 1rem;
+        .break-line {
+          display: block;
+        }
+      }
+      p {
+        line-height: 1rem;
+        margin-top: 2.5rem;
+        font-family: "Roag";
+        font-weight: 300;
+      }
+      .p2 {
+        margin-bottom: 3rem;
+      }
+      a {
+        background-color: rgba(247, 77, 101, 0.9);
+        color: white;
+        text-transform: uppercase;
+        font-weight: bold;
+        padding: 1rem 3.5rem;
+        border-radius: 1rem;
+      }
+      .doodle-arrow {
+        position: absolute;
+        bottom: 0;
+        right: 0;
+      }
+    }
+  }
+}
+
+@layer footernavigation {
+  footer {
+    margin: 0 2rem;
+    margin-bottom: 1rem;
+    img {
+      width: 50vw;
+      margin-top: 1rem;
+    }
+    .media-pipeburn {
+      width: 20vw;
+    }
+    .footer-text {
+      margin-top: 1rem;
+      margin-left: -1rem;
+      color: gray;
+    }
+  }
+}
+
+.dansk .heading {
+  color: black;
+  font-family: "Roag";
+  font-weight: bold;
+}
+
+.cta-hero-dansk-link {
+  background-color: rgb(190, 134, 142, 0.5);
+  color: rgba(247, 77, 101, 0.9);
+}
